@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_app_ui/colors.dart';
+import 'package:plant_app_ui/home_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -28,14 +29,16 @@ class WelcomeScreen extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
           ),
-          SizedBox(height: 60),
+          const SizedBox(height: 60),
           InkWell(
             onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()
+              ));
             },
             child: Container(
-              padding: EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: colors.grnClr,
+              padding: const EdgeInsets.all(20),
+              decoration: const BoxDecoration(
+                color: ColorsApp.grnClr,
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
@@ -45,7 +48,7 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ]
               ),
-              child: Text(
+              child: const Text(
                 "Go",
                 style: TextStyle(
                     color: Colors.white,

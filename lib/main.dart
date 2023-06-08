@@ -3,7 +3,7 @@ import 'package:plant_app_ui/welcome_screen.dart';
 
 
 void main(){
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
