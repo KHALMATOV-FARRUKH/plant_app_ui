@@ -12,8 +12,9 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: SafeArea(
+    return Scaffold(
+    backgroundColor: Colors.white,
+      body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -152,7 +153,7 @@ class HomeScreen extends StatelessWidget {
                                       Padding(
                                         padding: const EdgeInsets.all(15),
                                         child: Image.asset(
-                                            "assets/images/Plant${index + 1}.png"),
+                                            "assets/images/Plant${index +1}.png"),
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.only(
@@ -167,6 +168,36 @@ class HomeScreen extends StatelessWidget {
                                       ),
                                     ],
                                   ),
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.all(14),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(30),
+                                        color: Colors.white,
+                                      ),
+                                      child: const Text(
+                                        "Add to Cart",
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: ColorsApp.blClr,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      padding: const EdgeInsets.all(12),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(30),
+                                        color: Colors.white,
+                                      ),
+                                      child: const Icon(Icons.favorite,
+                                          color: Colors.red),
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),
