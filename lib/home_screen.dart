@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:plant_app_ui/colors.dart';
 
@@ -87,7 +88,7 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 5),
+              const SizedBox(height: 10),
               SizedBox(
                 height: 40,
                 child: ListView.builder(
@@ -118,13 +119,14 @@ class HomeScreen extends StatelessWidget {
                   },
                 ),
               ),
-              const SizedBox(height: 12),
+              const SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.only(left: 15),
                 child: SizedBox(
                   height: 350,
                   child: ListView.builder(
                     shrinkWrap: true,
+                    itemCount: 2,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       return Stack(
@@ -208,6 +210,33 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
+            ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: 90,
+        child: Container(
+          margin: EdgeInsets.only(left: 10, right: 10, bottom: 20, top: 10),
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          decoration: BoxDecoration(
+            color: ColorsApp.gryClr,
+            borderRadius: BorderRadius.circular(30),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Icon(Icons.home, color: Colors.black54),
+              Icon(Icons.favorite, color: Colors.black54),
+              Container(
+                  padding: EdgeInsets.all(9),
+                  decoration: BoxDecoration(
+                    color: Colors.black26,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Icon(CupertinoIcons.qrcode, color: Colors.black54)),
+              Icon(Icons.shopping_bag, color: Colors.black54),
+              Icon(Icons.person, color: Colors.black54),
             ],
           ),
         ),
