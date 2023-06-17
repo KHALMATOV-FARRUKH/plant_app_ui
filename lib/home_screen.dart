@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:plant_app_ui/colors.dart';
 
 class HomeScreen extends StatelessWidget {
+
   List<String> categories = [
     'All',
     'Indoor',
@@ -10,6 +11,9 @@ class HomeScreen extends StatelessWidget {
     'Popular',
     'Newest',
   ];
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +68,7 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           Column(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
+                            children: const [
                               Text(
                                 "30% OFF",
                                 style: TextStyle(
@@ -97,8 +101,8 @@ class HomeScreen extends StatelessWidget {
                   itemCount: categories.length,
                   itemBuilder: (context, index) {
                     return Container(
-                      margin: EdgeInsets.symmetric(horizontal: 8),
-                      padding: EdgeInsets.all(10),
+                      margin: const EdgeInsets.symmetric(horizontal: 8),
+                      padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                         border: Border.all(
@@ -133,7 +137,7 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           Container(
                             margin:
-                                EdgeInsets.only(right: 15, left: 5, bottom: 5),
+                                const EdgeInsets.only(right: 15, left: 5, bottom: 5),
                             width: MediaQuery.of(context).size.width / 2,
                             decoration: BoxDecoration(
                               color: ColorsApp.gryClr,
@@ -148,7 +152,7 @@ class HomeScreen extends StatelessWidget {
                             ),
                             child: Column(
                               children: [
-                                Container(
+                                SizedBox(
                                   height: 280,
                                   child: Stack(
                                     children: [
@@ -157,8 +161,8 @@ class HomeScreen extends StatelessWidget {
                                         child: Image.asset(
                                             "assets/images/Plant${index +1}.png"),
                                       ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(
+                                      const Padding(
+                                        padding: EdgeInsets.only(
                                             left: 140, top: 10),
                                         child: Text(
                                           "\$40",
@@ -214,11 +218,11 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: Container(
+      bottomNavigationBar: SizedBox(
         height: 90,
         child: Container(
-          margin: EdgeInsets.only(left: 10, right: 10, bottom: 20, top: 10),
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          margin: const EdgeInsets.only(left: 10, right: 10, bottom: 20, top: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           decoration: BoxDecoration(
             color: ColorsApp.gryClr,
             borderRadius: BorderRadius.circular(30),
@@ -226,17 +230,17 @@ class HomeScreen extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Icon(Icons.home, color: Colors.black54),
-              Icon(Icons.favorite, color: Colors.black54),
+              const Icon(Icons.home, color: Colors.black54),
+              const Icon(Icons.favorite, color: Colors.black54),
               Container(
-                  padding: EdgeInsets.all(9),
+                  padding: const EdgeInsets.all(9),
                   decoration: BoxDecoration(
                     color: Colors.black26,
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  child: Icon(CupertinoIcons.qrcode, color: Colors.black54)),
-              Icon(Icons.shopping_bag, color: Colors.black54),
-              Icon(Icons.person, color: Colors.black54),
+                  child: const Icon(CupertinoIcons.qrcode, color: Colors.black54)),
+              const Icon(Icons.shopping_bag, color: Colors.black54),
+              const Icon(Icons.person, color: Colors.black54),
             ],
           ),
         ),
